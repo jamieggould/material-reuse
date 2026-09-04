@@ -1,0 +1,33 @@
+/* Static-site adjustments */
+#search-outer, #search-box, #search, .search-btn, li#search-btn, .nectar-search { display: none !important; }
+.gfield_error input, .gfield_error select, .gfield_error textarea { border-color: #c02b0a !important; }
+.gform_confirmation_message { padding: 20px 0; font-size: 18px; }
+.mrg-form-error { color: #c02b0a; margin-bottom: 20px; }
+
+/* ---- FAQ toggles: keep the +/- icon on the right, clear of the text (fixes Safari) ---- */
+.toggles .toggle > .toggle-title { display: block; width: 100%; position: static; }
+.toggles .toggle > .toggle-title a { position: relative; display: block; }
+div[data-style*="minimal"] .toggle > .toggle-title a { padding-right: 70px !important; padding-left: 0 !important; }
+div[data-style*="minimal"] .toggle > .toggle-title a i { position: absolute; right: 0; left: auto; top: 50%; margin-top: -15px; width: 30px; height: 30px; font-size: 0; line-height: 0; }
+div[data-style*="minimal"] .toggle > .toggle-title a i:before,
+div[data-style*="minimal"] .toggle > .toggle-title a i:after { font-family: inherit; }
+
+/* ---- Home hero on phones/tablets: let the background photo fill the hero ---- */
+@media only screen and (max-width: 999px) {
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .flickity-viewport,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .flickity-slider,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .inner-wrap-outer,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .inner-wrap,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .img-with-aniamtion-wrap,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .inner,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .hover-wrap,
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .hover-wrap-inner { height: 100% !important; }
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell img { width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; }
+  body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .hover-wrap-inner:after { content: ""; position: absolute; inset: 0; background: rgba(6, 24, 63, 0.35); pointer-events: none; }
+  body.home .main-content > .row > .wpb_row.top-level:first-child .inner_row { position: relative; z-index: 1; }
+}
+
+/* ---- Carousel cards: never leave card content hidden by a pending entrance animation ---- */
+.nectar-carousel .cell .wpb_column,
+.nectar-carousel .cell [data-animation]:not(.img-with-animation) { opacity: 1 !important; transform: none !important; }
