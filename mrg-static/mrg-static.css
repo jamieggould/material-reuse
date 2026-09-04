@@ -26,8 +26,16 @@ div[data-style*="minimal"] .toggle > .toggle-title a i:after { font-family: inhe
   body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell img { width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; }
   body.home .main-content > .row > .wpb_row.top-level:first-child .nectar-flickity .cell .hover-wrap-inner:after { content: ""; position: absolute; inset: 0; background: rgba(6, 24, 63, 0.35); pointer-events: none; }
   body.home .main-content > .row > .wpb_row.top-level:first-child .inner_row { position: relative; z-index: 1; }
+
+  /* services carousel: no longer overlaps the photo below it, and titles wrap instead of being cut off */
+  .wpb_column.bottom_margin_phone_-80px { margin-bottom: 20px !important; }
+  .nectar-carousel .steps-checklist { flex-wrap: nowrap; }
+  .nectar-carousel .steps-checklist h4 { white-space: normal; min-width: 0; overflow-wrap: anywhere; }
+  .nectar-carousel .steps-checklist p.p-img img { width: 48px !important; height: 48px; }
 }
 
-/* ---- Carousel cards: never leave card content hidden by a pending entrance animation ---- */
+/* ---- Carousel cards: never collapse below their content, and never leave content hidden by a pending entrance animation ---- */
+.nectar-carousel[data-adaptive-height="true"] .flickity-viewport { min-height: 80px; }
+.nectar-carousel .cell img[src$=".svg"] { min-height: 54px; }
 .nectar-carousel .cell .wpb_column,
 .nectar-carousel .cell [data-animation]:not(.img-with-animation) { opacity: 1 !important; transform: none !important; }
